@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_LdcDJr()
+[Activity
+    Text = ${ChoiceInput_Prompt_LdcDJr_text()}
+]
+
+# ChoiceInput_Prompt_LdcDJr_text()
+- What can I help you with today?
+# ChoiceInput_Prompt_ZIZ7ry_text()
+- What question do you have about your Old Age Security pension?
+# ChoiceInput_Prompt_ZIZ7ry()
+[Activity
+    Text = ${ChoiceInput_Prompt_ZIZ7ry_text()}
+]

@@ -1,0 +1,37 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_VE1jOR_text()
+- OK, since you're only allowed one email address, do you want to change your email address?
+# ChoiceInput_Prompt_VE1jOR()
+[Activity
+    Text = ${ChoiceInput_Prompt_VE1jOR_text()}
+]
+
+# SendActivity_N6nhFX()
+[Activity
+    Text = ${SendActivity_N6nhFX_text()}
+]
+
+# SendActivity_N6nhFX_text()
+- Ok sounds good, you're all set then!
+# ChoiceInput_Prompt_emzBVz_text()
+- Is there anything else I can help you with today?
+# ChoiceInput_Prompt_emzBVz()
+[Activity
+    Text = ${ChoiceInput_Prompt_emzBVz_text()}
+]
+
+# SendActivity_mtqP7i()
+[Activity
+    Text = ${SendActivity_mtqP7i_text()}
+]
+
+# SendActivity_mtqP7i_text()
+- <Close off conversation flow>
+# ChoiceInput_Prompt_QT3xWJ_text()
+- Ok, great! I can help with that. The email address I have for you is  ${user.userData.fields["Employer Contact Email"]}. Would you like to update to a new email address?
+# ChoiceInput_Prompt_QT3xWJ()
+[Activity
+    Text = ${ChoiceInput_Prompt_QT3xWJ_text()}
+]
+

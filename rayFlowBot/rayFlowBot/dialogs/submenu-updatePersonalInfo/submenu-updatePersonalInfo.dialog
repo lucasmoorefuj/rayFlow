@@ -1,0 +1,83 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "v7tNaF",
+    "name": "submenu-updatePersonalInfo",
+    "comment": "Update personal information submenu"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "pNbt6T"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "oqSiRn"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "prompt": "${ChoiceInput_Prompt_oqSiRn()}",
+          "choices": [
+            "Contact detail",
+            "PoA/Martial Status",
+            "Banking Information",
+            "See more options"
+          ],
+          "outputFormat": "index",
+          "property": "dialog.subMenu.UpdatePersonalInfoChoice",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "4hqguQ"
+          },
+          "condition": "=dialog.subMenu.UpdatePersonalInfoChoice",
+          "cases": [
+            {
+              "value": "0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "vEb8Nk"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "submenu-updateContactDetails"
+                }
+              ]
+            },
+            {
+              "value": "1"
+            },
+            {
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "submenu-updatePersonalInfo.lg",
+  "recognizer": "submenu-updatePersonalInfo.lu.qna",
+  "id": "submenu-updatePersonalInfo"
+}

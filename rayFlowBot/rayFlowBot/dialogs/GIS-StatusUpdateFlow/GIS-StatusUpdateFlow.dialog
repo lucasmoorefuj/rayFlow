@@ -1,0 +1,92 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "mWKJBn",
+    "name": "GIS-StatusUpdateFlow",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "J27Bun"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VEf2jS"
+          },
+          "activity": "${SendActivity_VEf2jS()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "bfU7zs"
+          },
+          "activity": "${SendActivity_bfU7zs()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "RnqwAC"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "dialog.hasLifeChangesChoice",
+          "prompt": "${ChoiceInput_Prompt_RnqwAC()}",
+          "outputFormat": "value",
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "PsTb8Z"
+          },
+          "condition": "=dialog.hasLifeChangesChoice == \"Yes\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "t99cSl"
+              },
+              "activity": "${SendActivity_t99cSl()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "OuZr2M"
+              },
+              "activity": "${SendActivity_OuZr2M()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GIS-StatusUpdateFlow.lg",
+  "recognizer": "GIS-StatusUpdateFlow.lu.qna",
+  "id": "GIS-StatusUpdateFlow"
+}

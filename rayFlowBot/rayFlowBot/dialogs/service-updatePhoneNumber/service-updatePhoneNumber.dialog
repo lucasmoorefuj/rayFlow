@@ -1,0 +1,72 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ddFCxk",
+    "name": "service-updatePhoneNumber",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "OyS4q3"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "Qm5P2s"
+          },
+          "property": "user.userPhoneNumber",
+          "value": "=\"\""
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "SDugR7"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.userPhoneNumber",
+          "prompt": "${TextInput_Prompt_SDugR7()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "r4FEmR"
+          },
+          "resultProperty": "turn.results",
+          "body": {
+            "records": [
+              {
+                "id": "recrzEemVpbkeFE5C",
+                "fields": {
+                  "Callback Phone Number": "${user.userPhoneNumber}"
+                }
+              }
+            ]
+          },
+          "method": "PATCH",
+          "url": "https://api.airtable.com/v0/apprmDv9NMLgnZBuV/EI%20Data",
+          "headers": {
+            "Authorization": "Bearer key5vC3ALZrd3PHPG"
+          },
+          "responseType": "json",
+          "contentType": "application/json"
+        }
+      ]
+    }
+  ],
+  "generator": "service-updatePhoneNumber.lg",
+  "recognizer": "service-updatePhoneNumber.lu.qna",
+  "id": "service-updatePhoneNumber"
+}

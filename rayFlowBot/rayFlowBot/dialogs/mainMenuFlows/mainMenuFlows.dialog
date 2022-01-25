@@ -1,0 +1,125 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "OBrvOd",
+    "name": "mainMenuFlows",
+    "comment": "main menu and it's sub-menu flows"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "H9yI2x"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "LdcDJr"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "prompt": "${ChoiceInput_Prompt_LdcDJr()}",
+          "choices": [
+            "I have a question about my Old Age Security pension.",
+            "I want to update my personal information.",
+            "I have a question about my suspended Gaurenteed Income Supplement (GIS)"
+          ],
+          "outputFormat": "index",
+          "property": "dialog.mainMenuChoice",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "0qgbmB"
+          },
+          "condition": "dialog.mainMenuChoice",
+          "cases": [
+            {
+              "value": "0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "ZIZ7ry"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "prompt": "${ChoiceInput_Prompt_ZIZ7ry()}",
+                  "choices": [
+                    "Why has my payment amount changed?",
+                    "What will the amount of my next payment be?",
+                    "What is the date of my next payment?",
+                    "See more questions"
+                  ],
+                  "outputFormat": "index",
+                  "property": "dialog.mainMenuChoice",
+                  "style": "heroCard"
+                }
+              ]
+            },
+            {
+              "value": "1",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "cNBTSy"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "submenu-updatePersonalInfo"
+                }
+              ]
+            },
+            {
+              "value": "2",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "xmq7Bv"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "GIS-StatusUpdateFlow"
+                }
+              ]
+            }
+          ],
+          "default": []
+        }
+      ]
+    }
+  ],
+  "generator": "mainMenuFlows.lg",
+  "recognizer": "mainMenuFlows.lu.qna",
+  "id": "mainMenuFlows"
+}

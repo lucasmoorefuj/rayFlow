@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# TextInput_Prompt_UKCgwj()
+[Activity
+    Text = ${TextInput_Prompt_UKCgwj_text()}
+]
+
+# TextInput_Prompt_UKCgwj_text()
+- What's your new email address?

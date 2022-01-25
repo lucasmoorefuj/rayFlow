@@ -1,0 +1,72 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "3b0EiP",
+    "name": "service-updateEmail",
+    "comment": "This prompts user for an email and then updates their file using a patch call to the api."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "9xNl5q"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "uNS3QI"
+          },
+          "property": "user.userEmail",
+          "value": "=\"\""
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "UKCgwj"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.userEmail",
+          "prompt": "${TextInput_Prompt_UKCgwj()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "s924aj"
+          },
+          "resultProperty": "turn.results",
+          "body": {
+            "records": [
+              {
+                "id": "recrzEemVpbkeFE5C",
+                "fields": {
+                  "Employer Contact Email": "${user.userEmail}"
+                }
+              }
+            ]
+          },
+          "method": "PATCH",
+          "url": "https://api.airtable.com/v0/apprmDv9NMLgnZBuV/EI%20Data",
+          "headers": {
+            "Authorization": "Bearer key5vC3ALZrd3PHPG"
+          },
+          "responseType": "json",
+          "contentType": "application/json"
+        }
+      ]
+    }
+  ],
+  "generator": "service-updateEmail.lg",
+  "recognizer": "service-updateEmail.lu.qna",
+  "id": "service-updateEmail"
+}

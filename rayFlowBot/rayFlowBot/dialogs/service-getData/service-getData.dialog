@@ -1,0 +1,65 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "D5341w",
+    "name": "service-getData",
+    "comment": "retrieve user data"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Do5h3N"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "GGyqEl"
+          },
+          "resultProperty": "dialog.api_response",
+          "method": "GET",
+          "url": "https://api.airtable.com/v0/apprmDv9NMLgnZBuV/EI%20Data/recrzEemVpbkeFE5C",
+          "headers": {
+            "Authorization": "Bearer key5vC3ALZrd3PHPG"
+          },
+          "contentType": "application/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "1ANTGt"
+          },
+          "condition": "=dialog.api_response.statusCode==200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "VWixXm"
+              },
+              "property": "user.userData",
+              "value": "=dialog.api_response.content"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Aiaixu"
+              },
+              "activity": "${SendActivity_Aiaixu()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "service-getData.lg",
+  "recognizer": "service-getData.lu.qna",
+  "id": "service-getData"
+}

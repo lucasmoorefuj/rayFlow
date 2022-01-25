@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_Aiaixu()
+[Activity
+    Text = ${SendActivity_Aiaixu_text()}
+]
+
+# SendActivity_Aiaixu_text()
+- Was not able to retrieve the user data at this time.

@@ -1,0 +1,93 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "kBkiCJ",
+    "name": "submenu-updateContactDetails",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "JGry05"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "A4GRgh"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_A4GRgh()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "index",
+          "style": "heroCard",
+          "choices": [
+            "Update my email",
+            "Update my address",
+            "Update my phone number"
+          ],
+          "property": "dialog.subMenu.UpdateContactInfoChoice"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "9T7KDu"
+          },
+          "condition": "=dialog.subMenu.UpdateContactInfoChoice",
+          "cases": [
+            {
+              "value": "0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "umz6M6"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "updateEmailFlow"
+                }
+              ]
+            },
+            {
+              "value": "1",
+              "actions": []
+            },
+            {
+              "value": "2",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "K5Zk3v"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "updatePhoneNumberFlow"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "submenu-updateContactDetails.lg",
+  "recognizer": "submenu-updateContactDetails.lu.qna",
+  "id": "submenu-updateContactDetails"
+}

@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# SendActivity_gWlQ9w()
+[Activity
+    Text = ${SendActivity_gWlQ9w_text()}
+]
+
+# SendActivity_gWlQ9w_text()
+-  ${user.userData.fields["First Name"]}
+# ConfirmInput_Prompt_eafnK7()
+[Activity
+    Text = ${ConfirmInput_Prompt_eafnK7_text()}
+]
+
+# ConfirmInput_Prompt_eafnK7_text()
+- Please login 
+# SendActivity_GYgx1r()
+[Activity
+    Text = ${SendActivity_GYgx1r_text()}
+]
+
+# SendActivity_GYgx1r_text()
+- The user is logged in : ${user.isLoggedIn}

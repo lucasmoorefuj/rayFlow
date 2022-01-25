@@ -1,0 +1,37 @@
+[import](common.lg)
+
+# SendActivity_VEf2jS()
+[Activity
+    Text = ${SendActivity_VEf2jS_text()}
+]
+
+# SendActivity_VEf2jS_text()
+- We've received your 2020 income statement, and it's being processed.
+# SendActivity_bfU7zs()
+[Activity
+    Text = ${SendActivity_bfU7zs_text()}
+]
+
+# SendActivity_bfU7zs_text()
+- Has any of the following things changed for you since you provided the 2020 income statement?
+# SendActivity_t99cSl()
+[Activity
+    Text = ${SendActivity_t99cSl_text()}
+]
+
+# SendActivity_t99cSl_text()
+- <Flow where the citizen needs to provide an updated income statement>
+# SendActivity_OuZr2M_text()
+- You can expect your GIS payments to start again by XYZ, including backpay. Because you have declared $0, you can expect to receive the maximum GIS allowance, so XYZ$.
+# SendActivity_OuZr2M()
+[Activity
+    Text = ${SendActivity_OuZr2M_text()}
+]
+
+# ChoiceInput_Prompt_RnqwAC()
+[Activity
+    Text = ${ChoiceInput_Prompt_RnqwAC_text()}
+]
+
+# ChoiceInput_Prompt_RnqwAC_text()
+- Such changes might include new marital status, new income or a change in which country you've lived in (for 6 consecutive months in the last 18 months).

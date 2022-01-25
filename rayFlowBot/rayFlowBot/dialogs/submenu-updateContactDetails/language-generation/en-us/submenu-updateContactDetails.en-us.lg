@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_A4GRgh()
+[Activity
+    Text = ${ChoiceInput_Prompt_A4GRgh_text()}
+]
+
+# ChoiceInput_Prompt_A4GRgh_text()
+- Alright, I can help you with that. Which would you like to do?

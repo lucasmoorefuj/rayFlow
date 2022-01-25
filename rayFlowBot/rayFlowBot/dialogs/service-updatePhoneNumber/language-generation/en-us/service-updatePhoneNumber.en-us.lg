@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# TextInput_Prompt_SDugR7_text()
+- What's your new phone number?
+# TextInput_Prompt_SDugR7()
+[Activity
+    Text = ${TextInput_Prompt_SDugR7_text()}
+]

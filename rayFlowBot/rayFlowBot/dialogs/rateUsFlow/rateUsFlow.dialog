@@ -1,0 +1,24 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "60wARv",
+    "name": "rateUsFlow",
+    "comment": "Prompt the user to rate us."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "IY3btT"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "rateUsFlow.lg",
+  "recognizer": "rateUsFlow.lu.qna",
+  "id": "rateUsFlow"
+}

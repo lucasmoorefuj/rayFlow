@@ -1,0 +1,36 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_S5owCt_text()
+- Ok, great! I can help with that. The  phone number I have for you is ${user.userData.fields["Callback Phone Number"]}. Would you like to update to a new phone number?
+# ChoiceInput_Prompt_S5owCt()
+[Activity
+    Text = ${ChoiceInput_Prompt_S5owCt_text()}
+]
+
+# SendActivity_GWPiWT_text()
+- Ok sounds good, you're all set then!
+# SendActivity_GWPiWT()
+[Activity
+    Text = ${SendActivity_GWPiWT_text()}
+]
+
+# ChoiceInput_Prompt_DC5CMd_text()
+- Is there anything else I can help you with today?
+# ChoiceInput_Prompt_DC5CMd()
+[Activity
+    Text = ${ChoiceInput_Prompt_DC5CMd_text()}
+]
+
+# SendActivity_6fIqeg_text()
+- <Close off conversation flow>
+# SendActivity_6fIqeg()
+[Activity
+    Text = ${SendActivity_6fIqeg_text()}
+]
+
+# SendActivity_LF2xj8_text()
+- Ok, no problem!
+# SendActivity_LF2xj8()
+[Activity
+    Text = ${SendActivity_LF2xj8_text()}
+]

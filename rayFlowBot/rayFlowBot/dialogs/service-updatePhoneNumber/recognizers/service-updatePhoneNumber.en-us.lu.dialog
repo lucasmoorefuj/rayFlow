@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_service-updatePhoneNumber",
+  "applicationId": "=settings.luis.service_updatePhoneNumber_en_us_lu.appId",
+  "version": "=settings.luis.service_updatePhoneNumber_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}
