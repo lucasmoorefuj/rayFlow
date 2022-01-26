@@ -1,0 +1,24 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_COcmjQ_text()
+- Did you live outside of Canada in for 6 consecutive months in the last 18 months?
+# ChoiceInput_Prompt_COcmjQ()
+[Activity
+    Text = ${ChoiceInput_Prompt_COcmjQ_text()}
+]
+
+# ChoiceInput_Prompt_nnkiVa_text()
+- ```Living abroad for 6 consecutive months disqualifies you from receiving GIS. It could also be  why your payments were put on hold.
+
+If you believe this to be a mistake, I can have someone call you.```
+# ChoiceInput_Prompt_nnkiVa()
+[Activity
+    Text = ${ChoiceInput_Prompt_nnkiVa_text()}
+]
+
+# SendActivity_nUpexy_text()
+- <Take user to Callback flow>
+# SendActivity_nUpexy()
+[Activity
+    Text = ${SendActivity_nUpexy_text()}
+]

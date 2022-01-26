@@ -1,0 +1,5 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Blocker-GIS-Payment-Onhold",
+  "recognizers": {}
+}

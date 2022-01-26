@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_GIS-createIncomeStatement-maritalStatus",
+  "applicationId": "=settings.luis.GIS_createIncomeStatement_maritalStatus_en_us_lu.appId",
+  "version": "=settings.luis.GIS_createIncomeStatement_maritalStatus_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

@@ -1,0 +1,5 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_GIS-createIncomeStatement-maritalStatus",
+  "recognizers": {}
+}

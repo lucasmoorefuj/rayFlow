@@ -1,0 +1,139 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "IDwSki",
+    "name": "Blocker-GIS-Payment-Onhold",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "garBH2"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "hb0cMc"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_hb0cMc()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value",
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "property": "dialog.GISFlowChoice",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "e9zMzO"
+          },
+          "condition": "=dialog.GISFlowChoice==\"Yes\"",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "dSzoWq"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "tMNqxQ"
+              },
+              "activity": "${SendActivity_tMNqxQ()}"
+            },
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "0hGtRS"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_0hGtRS()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "outputFormat": "value",
+              "choices": [
+                "Yes",
+                "No"
+              ],
+              "property": "dialog.GISCreateIncomeStatementChoice",
+              "style": "heroCard"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "LXKRee"
+              },
+              "condition": "=dialog.GISCreateIncomeStatementChoice==\"Yes\"",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "fD107t"
+                  },
+                  "activity": "${SendActivity_fD107t()}"
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "SPdkml"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "GIS-createIncomeStatement-maritalStatus"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "AoY5FV"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "GIS-createIncomeStatement-outsideCA"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "Blocker-GIS-Payment-Onhold.lg",
+  "recognizer": "Blocker-GIS-Payment-Onhold.lu.qna",
+  "id": "Blocker-GIS-Payment-Onhold"
+}

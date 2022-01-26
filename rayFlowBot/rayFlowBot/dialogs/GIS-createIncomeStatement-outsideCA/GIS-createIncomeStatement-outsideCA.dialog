@@ -1,0 +1,107 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "WH1aui",
+    "name": "GIS-createIncomeStatement-outsideCA",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "vYSnGu"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "COcmjQ"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_COcmjQ()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value",
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "property": "dialog.GIS.newIncomeStatement.inCAChoice",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "B5i2TC"
+          },
+          "condition": "=dialog.GIS.newIncomeStatement.inCAChoice==\"Yes\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "nnkiVa"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_nnkiVa()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "outputFormat": "value",
+              "choices": [
+                "Yes",
+                "No"
+              ],
+              "property": "dialog.GIS.newIncomeStatement.liveAbroad",
+              "style": "heroCard"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "wQpck5"
+              },
+              "condition": "=dialog.GIS.newIncomeStatement.liveAbroad==\"Yes\"",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "nUpexy"
+                  },
+                  "activity": "${SendActivity_nUpexy()}"
+                }
+              ],
+              "elseActions": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GIS-createIncomeStatement-outsideCA.lg",
+  "recognizer": "GIS-createIncomeStatement-outsideCA.lu.qna",
+  "id": "GIS-createIncomeStatement-outsideCA"
+}

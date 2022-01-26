@@ -155,12 +155,6 @@
                 "id": "mtqP7i"
               },
               "activity": "${SendActivity_mtqP7i()}"
-            },
-            {
-              "$kind": "Microsoft.EndTurn",
-              "$designer": {
-                "id": "yj846Y"
-              }
             }
           ],
           "actions": [

@@ -1,0 +1,84 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "kueQ0P",
+    "name": "checkForBlocker-Handler",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "QusIdS"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "Qyeo0m"
+          },
+          "property": "user.blockers",
+          "value": [
+            "GIS-Payment-Onhold"
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "KHlk3n"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "user.blockers",
+          "actions": [
+            {
+              "$kind": "Microsoft.SwitchCondition",
+              "$designer": {
+                "id": "QQRApu"
+              },
+              "condition": "=dialog.foreach.value",
+              "cases": [
+                {
+                  "value": "GIS-Payment-Onhold",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "LNl3gf"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "Blocker-GIS-Payment-Onhold"
+                    }
+                  ]
+                },
+                {
+                  "value": "Test"
+                },
+                {
+                  "value": "Update-Email",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "ap1lTu"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "updateEmailFlow"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "checkForBlocker-Handler.lg",
+  "recognizer": "checkForBlocker-Handler.lu.qna",
+  "id": "checkForBlocker-Handler"
+}

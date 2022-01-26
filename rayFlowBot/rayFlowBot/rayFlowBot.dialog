@@ -44,6 +44,14 @@
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
+                    "id": "kxdpWm"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "checkForBlocker-Handler"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
                     "id": "ngBP8d"
                   },
                   "activityProcessed": true,

@@ -1,0 +1,44 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_hb0cMc()
+[Activity
+    Text = ${ChoiceInput_Prompt_hb0cMc_text()}
+]
+
+# ChoiceInput_Prompt_hb0cMc_text()
+- I can see your GIS payments are on hold. Do you want me to help with that?
+# SendActivity_tMNqxQ()
+[Activity
+    Text = ${SendActivity_tMNqxQ_text()}
+]
+
+# SendActivity_tMNqxQ_text()
+- Your guaranteed supplement income (GIS) payments are on hold. Every year, we calculate GIS payments based on your net income, and we do not have your 2020 income information.
+# ChoiceInput_Prompt_0hGtRS_text()
+- If you'd like, I can create another statement of income for you. That way, we can put you back in payment faster without having the need to file your taxes for 2020. Do you want to continue?
+# ChoiceInput_Prompt_0hGtRS()
+[Activity
+    Text = ${ChoiceInput_Prompt_0hGtRS_text()}
+]
+
+# SendActivity_hQSfbz_text()
+- Your guaranteed supplement income (GIS) payments are on hold. Every year, we calculate GIS payments based on your net income, and we do not have your 2020 income information.
+# SendActivity_hQSfbz()
+[Activity
+    Text = ${SendActivity_hQSfbz_text()}
+]
+
+# ChoiceInput_Prompt_69Dedt_text()
+- If you'd like, I can create another statement of income for you. That way, we can put you back in payment faster without having the need to file your taxes for 2020. Do you want to continue?
+# ChoiceInput_Prompt_69Dedt()
+[Activity
+    Text = ${ChoiceInput_Prompt_69Dedt_text()}
+]
+
+# SendActivity_fD107t()
+[Activity
+    Text = ${SendActivity_fD107t_text()}
+]
+
+# SendActivity_fD107t_text()
+- <Take user to callback flow>

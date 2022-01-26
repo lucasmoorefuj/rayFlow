@@ -1,0 +1,69 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "jvCIbc",
+    "name": "GIS-createIncomeStatement-maritalStatus",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FWWbPC"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "qTyq0n"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_qTyq0n()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value",
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "property": "dialog.GIS.newIncomeStatement.martialStatus",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Ia4Auk"
+          },
+          "condition": "=dialog.GIS.newIncomeStatement.martialStatus==\"Yes\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "W6W2wB"
+              },
+              "activity": "${SendActivity_W6W2wB()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GIS-createIncomeStatement-maritalStatus.lg",
+  "recognizer": "GIS-createIncomeStatement-maritalStatus.lu.qna",
+  "id": "GIS-createIncomeStatement-maritalStatus"
+}

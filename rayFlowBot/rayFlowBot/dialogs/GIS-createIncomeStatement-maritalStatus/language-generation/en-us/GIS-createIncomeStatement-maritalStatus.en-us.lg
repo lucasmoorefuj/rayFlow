@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_4BGeFB_text()
+- Has your marital status changed in 2020?
+# ChoiceInput_Prompt_4BGeFB()
+[Activity
+    Text = ${ChoiceInput_Prompt_4BGeFB_text()}
+]
+
+# ChoiceInput_Prompt_qTyq0n_text()
+- Has your marital status chagned in 2020?
+# ChoiceInput_Prompt_qTyq0n()
+[Activity
+    Text = ${ChoiceInput_Prompt_qTyq0n_text()}
+]
+
+# SendActivity_W6W2wB()
+[Activity
+    Text = ${SendActivity_W6W2wB_text()}
+]
+
+# SendActivity_W6W2wB_text()
+- <Take user to Callback flow>
