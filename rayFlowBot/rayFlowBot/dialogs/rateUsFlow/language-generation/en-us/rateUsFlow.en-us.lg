@@ -1,1 +1,9 @@
 [import](common.lg)
+
+# SendActivity_rOKWgu()
+[Activity
+    Text = ${SendActivity_rOKWgu_text()}
+]
+
+# SendActivity_rOKWgu_text()
+- <TODO Rate us dialog>

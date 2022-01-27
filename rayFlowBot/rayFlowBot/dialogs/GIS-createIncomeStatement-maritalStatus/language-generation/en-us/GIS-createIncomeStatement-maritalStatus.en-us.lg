@@ -8,16 +8,25 @@
 ]
 
 # ChoiceInput_Prompt_qTyq0n_text()
-- Has your marital status chagned in 2020?
+- Has your marital status changed in 2020?
 # ChoiceInput_Prompt_qTyq0n()
 [Activity
     Text = ${ChoiceInput_Prompt_qTyq0n_text()}
 ]
 
-# SendActivity_W6W2wB()
+# ChoiceInput_Prompt_3JRbEn_text()
+- ```Your marital status may change may impact your GIS payments It may also impact the information we need to receive from you in order to qualify. It could  be why your payments were put on hold.
+
+If you believe this to be a mistake, I can have someone call you.
+```
+# ChoiceInput_Prompt_3JRbEn()
 [Activity
-    Text = ${SendActivity_W6W2wB_text()}
+    Text = ${ChoiceInput_Prompt_3JRbEn_text()}
 ]
 
-# SendActivity_W6W2wB_text()
+# SendActivity_OdCcP4_text()
 - <Take user to Callback flow>
+# SendActivity_OdCcP4()
+[Activity
+    Text = ${SendActivity_OdCcP4_text()}
+]

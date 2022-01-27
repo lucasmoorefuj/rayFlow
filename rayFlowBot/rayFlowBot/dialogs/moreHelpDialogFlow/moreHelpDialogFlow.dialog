@@ -1,0 +1,97 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Rgn43J",
+    "name": "moreHelpDialogFlow",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "L6RFvb"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "FtSRpb"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_FtSRpb()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "choices": [
+            "Yes",
+            "No",
+            "I need money now"
+          ],
+          "property": "dialog.moreHelpChoice",
+          "outputFormat": "index"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "cdjpVE"
+          },
+          "condition": "dialog.moreHelpChoice",
+          "cases": [
+            {
+              "value": "0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "T64L5a"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "mainMenuFlows"
+                }
+              ]
+            },
+            {
+              "value": "1",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "PDgMd6"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "rateUsFlow"
+                },
+                {
+                  "$kind": "Microsoft.EndTurn",
+                  "$designer": {
+                    "id": "OyzVgM"
+                  }
+                }
+              ]
+            },
+            {
+              "value": "2",
+              "actions": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "moreHelpDialogFlow.lg",
+  "recognizer": "moreHelpDialogFlow.lu.qna",
+  "id": "moreHelpDialogFlow"
+}

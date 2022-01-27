@@ -23,13 +23,11 @@
           },
           "defaultLocale": "en-us",
           "disabled": false,
-          "maxTurnCount": 3,
+          "maxTurnCount": 1,
           "alwaysPrompt": false,
           "allowInterruptions": false,
           "prompt": "${ChoiceInput_Prompt_hb0cMc()}",
           "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
@@ -42,7 +40,13 @@
             "No"
           ],
           "property": "dialog.GISFlowChoice",
-          "style": "heroCard"
+          "style": "heroCard",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_hb0cMc()}",
+          "invalidPrompt": "${ChoiceInput_InvalidPrompt_hb0cMc()}"
         },
         {
           "$kind": "Microsoft.IfCondition",
@@ -119,12 +123,31 @@
                   "dialog": "GIS-createIncomeStatement-maritalStatus"
                 },
                 {
-                  "$kind": "Microsoft.BeginDialog",
+                  "$kind": "Microsoft.IfCondition",
                   "$designer": {
-                    "id": "AoY5FV"
+                    "id": "50DkTw"
                   },
-                  "activityProcessed": true,
-                  "dialog": "GIS-createIncomeStatement-outsideCA"
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "Yf16sa"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "GIS-createIncomeStatement-outsideCA"
+                    }
+                  ],
+                  "condition": "=user.GIS.createStatementIsValid",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "mry6tD"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "moreHelpDialogFlow"
+                    }
+                  ]
                 }
               ]
             }

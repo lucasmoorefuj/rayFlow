@@ -42,3 +42,18 @@
 
 # SendActivity_fD107t_text()
 - <Take user to callback flow>
+# ChoiceInput_DefaultValueResponse_hb0cMc()
+[Activity
+    Text = ${ChoiceInput_DefaultValueResponse_hb0cMc_text()}
+]
+
+# ChoiceInput_DefaultValueResponse_hb0cMc_text()
+- Error handling in progress
+- Test text for errors 
+# ChoiceInput_InvalidPrompt_hb0cMc()
+[Activity
+    Text = ${ChoiceInput_InvalidPrompt_hb0cMc_text()}
+]
+
+# ChoiceInput_InvalidPrompt_hb0cMc_text()
+- Test text for GIS blocker rorr invalid prompt

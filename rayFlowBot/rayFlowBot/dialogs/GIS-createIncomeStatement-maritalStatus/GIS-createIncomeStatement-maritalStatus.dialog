@@ -52,11 +52,67 @@
           "condition": "=dialog.GIS.newIncomeStatement.martialStatus==\"Yes\"",
           "actions": [
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.ChoiceInput",
               "$designer": {
-                "id": "W6W2wB"
+                "id": "3JRbEn"
               },
-              "activity": "${SendActivity_W6W2wB()}"
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_3JRbEn()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "outputFormat": "value",
+              "choices": [
+                "Yes",
+                "No"
+              ],
+              "property": "dialog.GIS.newIncomeStatement.martialConfirm",
+              "style": "heroCard"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "06eAjZ"
+              },
+              "condition": "=dialog.GIS.newIncomeStatement.martialConfirm==\"Yes\"",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "OdCcP4"
+                  },
+                  "activity": "${SendActivity_OdCcP4()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "iQyDCF",
+                    "comment": "TODO: See if this can be done in what the \"End this dialog\" returns"
+                  },
+                  "property": "user.GIS.createStatementIsValid",
+                  "value": false
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "Sfd4zZ",
+                    "comment": "Luke note: Now what?"
+                  },
+                  "value": false
+                }
+              ]
             }
           ]
         }

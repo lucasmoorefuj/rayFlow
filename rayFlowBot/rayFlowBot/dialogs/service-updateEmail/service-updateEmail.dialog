@@ -34,10 +34,9 @@
           "alwaysPrompt": false,
           "allowInterruptions": false,
           "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
           "property": "user.userEmail",
-          "prompt": "${TextInput_Prompt_UKCgwj()}"
+          "prompt": "${TextInput_Prompt_UKCgwj()}",
+          "validations": []
         },
         {
           "$kind": "Microsoft.HttpRequest",

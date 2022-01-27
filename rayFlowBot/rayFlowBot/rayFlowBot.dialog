@@ -52,7 +52,7 @@
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "ngBP8d"
+                    "id": "jbvCqY"
                   },
                   "activityProcessed": true,
                   "dialog": "mainMenuFlows"

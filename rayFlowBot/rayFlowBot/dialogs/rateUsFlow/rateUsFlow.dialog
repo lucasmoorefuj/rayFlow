@@ -15,7 +15,15 @@
         "description": "",
         "id": "IY3btT"
       },
-      "actions": []
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rOKWgu"
+          },
+          "activity": "${SendActivity_rOKWgu()}"
+        }
+      ]
     }
   ],
   "generator": "rateUsFlow.lg",
