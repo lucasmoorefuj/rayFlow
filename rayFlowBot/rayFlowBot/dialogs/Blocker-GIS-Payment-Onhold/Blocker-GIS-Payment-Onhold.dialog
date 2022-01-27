@@ -115,6 +115,14 @@
               ],
               "actions": [
                 {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "SSlTMU"
+                  },
+                  "property": "user.GIS.createStatementIsValid",
+                  "value": true
+                },
+                {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
                     "id": "SPdkml"
