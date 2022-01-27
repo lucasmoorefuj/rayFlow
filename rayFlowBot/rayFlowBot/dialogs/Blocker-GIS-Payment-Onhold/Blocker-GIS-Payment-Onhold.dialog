@@ -101,63 +101,116 @@
             {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
-                "id": "LXKRee"
+                "id": "8YoEEn"
               },
               "condition": "=dialog.GISCreateIncomeStatementChoice==\"Yes\"",
               "elseActions": [
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "fD107t"
+                    "id": "sHBaz6"
                   },
-                  "activity": "${SendActivity_fD107t()}"
+                  "activity": "${SendActivity_sHBaz6()}"
                 }
               ],
               "actions": [
                 {
                   "$kind": "Microsoft.SetProperty",
                   "$designer": {
-                    "id": "SSlTMU"
+                    "id": "PcXUU4"
                   },
                   "property": "user.GIS.createStatementIsValid",
                   "value": true
                 },
                 {
-                  "$kind": "Microsoft.BeginDialog",
+                  "$kind": "Microsoft.SetProperty",
                   "$designer": {
-                    "id": "SPdkml"
+                    "id": "CNiE7o"
                   },
-                  "activityProcessed": true,
-                  "dialog": "GIS-createIncomeStatement-maritalStatus"
+                  "property": "user.blockerFlows",
+                  "value": [
+                    "GIS-maritalStatus",
+                    "GIS-outsideCA",
+                    "GIS-accurateInfoPrompt"
+                  ]
                 },
                 {
-                  "$kind": "Microsoft.IfCondition",
+                  "$kind": "Microsoft.Foreach",
                   "$designer": {
-                    "id": "50DkTw"
+                    "id": "b2ogxK"
                   },
+                  "index": "dialog.foreach.index",
+                  "value": "dialog.foreach.value",
+                  "itemsProperty": "user.blockerFlows",
                   "actions": [
                     {
-                      "$kind": "Microsoft.BeginDialog",
+                      "$kind": "Microsoft.IfCondition",
                       "$designer": {
-                        "id": "Yf16sa"
+                        "id": "5GkNqZ"
                       },
-                      "activityProcessed": true,
-                      "dialog": "GIS-createIncomeStatement-outsideCA"
-                    }
-                  ],
-                  "condition": "=user.GIS.createStatementIsValid",
-                  "elseActions": [
-                    {
-                      "$kind": "Microsoft.BeginDialog",
-                      "$designer": {
-                        "id": "mry6tD"
-                      },
-                      "activityProcessed": true,
-                      "dialog": "moreHelpDialogFlow"
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SwitchCondition",
+                          "$designer": {
+                            "id": "g4dSU6"
+                          },
+                          "condition": "=dialog.foreach.value",
+                          "cases": [
+                            {
+                              "value": "${user.blockerFlows[0]}",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "y7X93F"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "GIS-createIncomeStatement-maritalStatus"
+                                }
+                              ]
+                            },
+                            {
+                              "value": "${user.blockerFlows[1]}",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "mpUOaw"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "GIS-createIncomeStatement-outsideCA"
+                                }
+                              ]
+                            },
+                            {
+                              "value": "${user.blockerFlows[2]}",
+                              "actions": []
+                            }
+                          ]
+                        }
+                      ],
+                      "condition": "=user.GIS.createStatementIsValid",
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "FP3GUB"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "moreHelpDialogFlow"
+                        }
+                      ]
                     }
                   ]
                 }
               ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "1dokNi"
+              },
+              "activity": "${SendActivity_1dokNi()}"
             }
           ]
         }

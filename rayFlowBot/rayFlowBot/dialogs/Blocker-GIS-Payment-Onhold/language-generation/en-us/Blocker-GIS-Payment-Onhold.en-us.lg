@@ -35,13 +35,6 @@
     Text = ${ChoiceInput_Prompt_69Dedt_text()}
 ]
 
-# SendActivity_fD107t()
-[Activity
-    Text = ${SendActivity_fD107t_text()}
-]
-
-# SendActivity_fD107t_text()
-- <Take user to callback flow>
 # ChoiceInput_DefaultValueResponse_hb0cMc()
 [Activity
     Text = ${ChoiceInput_DefaultValueResponse_hb0cMc_text()}
@@ -57,3 +50,16 @@
 
 # ChoiceInput_InvalidPrompt_hb0cMc_text()
 - Test text for GIS blocker rorr invalid prompt
+# SendActivity_1dokNi()
+[Activity
+    Text = ${SendActivity_1dokNi_text()}
+]
+
+# SendActivity_1dokNi_text()
+- chaos testing loop is done this is before previosu code kicks back in dialogy wise
+# SendActivity_sHBaz6_text()
+- <Take user to callback flow>
+# SendActivity_sHBaz6()
+[Activity
+    Text = ${SendActivity_sHBaz6_text()}
+]
