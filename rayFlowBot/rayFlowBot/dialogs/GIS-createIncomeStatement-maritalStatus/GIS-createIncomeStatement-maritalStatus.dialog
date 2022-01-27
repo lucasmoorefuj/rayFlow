@@ -87,6 +87,15 @@
               "condition": "=dialog.GIS.newIncomeStatement.martialConfirm==\"Yes\"",
               "actions": [
                 {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "RD1HQE",
+                    "comment": "TODO: See if this can be done in what the \"End this dialog\" returns"
+                  },
+                  "property": "user.GIS.createStatementIsValid",
+                  "value": false
+                },
+                {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
                     "id": "OdCcP4"
