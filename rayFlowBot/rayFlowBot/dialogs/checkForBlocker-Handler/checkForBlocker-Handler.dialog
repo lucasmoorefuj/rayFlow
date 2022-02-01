@@ -51,7 +51,8 @@
                         "id": "LNl3gf"
                       },
                       "activityProcessed": true,
-                      "dialog": "Blocker-GIS-Payment-Onhold"
+                      "dialog": "Blocker-GIS-Payment-Onhold",
+                      "options": {}
                     }
                   ]
                 },

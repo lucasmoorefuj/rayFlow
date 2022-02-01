@@ -1,26 +1,5 @@
 [import](common.lg)
 
-# ChoiceInput_Prompt_hb0cMc()
-[Activity
-    Text = ${ChoiceInput_Prompt_hb0cMc_text()}
-]
-
-# ChoiceInput_Prompt_hb0cMc_text()
-- I can see your GIS payments are on hold. Do you want me to help with that?
-# SendActivity_tMNqxQ()
-[Activity
-    Text = ${SendActivity_tMNqxQ_text()}
-]
-
-# SendActivity_tMNqxQ_text()
-- Your guaranteed supplement income (GIS) payments are on hold. Every year, we calculate GIS payments based on your net income, and we do not have your 2020 income information.
-# ChoiceInput_Prompt_0hGtRS_text()
-- If you'd like, I can create another statement of income for you. That way, we can put you back in payment faster without having the need to file your taxes for 2020. Do you want to continue?
-# ChoiceInput_Prompt_0hGtRS()
-[Activity
-    Text = ${ChoiceInput_Prompt_0hGtRS_text()}
-]
-
 # SendActivity_hQSfbz_text()
 - Your guaranteed supplement income (GIS) payments are on hold. Every year, we calculate GIS payments based on your net income, and we do not have your 2020 income information.
 # SendActivity_hQSfbz()
@@ -35,31 +14,112 @@
     Text = ${ChoiceInput_Prompt_69Dedt_text()}
 ]
 
-# ChoiceInput_DefaultValueResponse_hb0cMc()
+# ChoiceInput_Prompt_hPpLlR()
 [Activity
-    Text = ${ChoiceInput_DefaultValueResponse_hb0cMc_text()}
+    Text = ${ChoiceInput_Prompt_hPpLlR_text()}
 ]
 
-# ChoiceInput_DefaultValueResponse_hb0cMc_text()
+# ChoiceInput_Prompt_hPpLlR_text()
+- ```I want to submit my statement of income for the purpose of the Guaranteed Income Supplement.
+
+I declare that, to the best of my knowledge the information on this statement is true and complete.
+
+I realize that my personal information is governed by the Privacy Act and may be disclosed, where authorized, under the Old Age Security Act.```
+# SendActivity_f7VHE0()
+[Activity
+    Text = ${SendActivity_f7VHE0_text()}
+]
+
+# SendActivity_f7VHE0_text()
+- Great! I've completed your statement of income.
+# ChoiceInput_Prompt_DeQH6L_text()
+- No problem, do you want to try again?
+# ChoiceInput_Prompt_DeQH6L()
+[Activity
+    Text = ${ChoiceInput_Prompt_DeQH6L_text()}
+]
+
+# ChoiceInput_Prompt_KsCK9C_text()
+- I can see your Guaranteed Income Supplement payments have stopped. Would you like me to find out what happened and suggest solutions?
+# ChoiceInput_Prompt_KsCK9C()
+[Activity
+    Text = ${ChoiceInput_Prompt_KsCK9C_text()}
+]
+
+# ChoiceInput_InvalidPrompt_KsCK9C_text()
+- Test text for GIS blocker rorr invalid prompt
+# ChoiceInput_InvalidPrompt_KsCK9C()
+[Activity
+    Text = ${ChoiceInput_InvalidPrompt_KsCK9C_text()}
+]
+
+# ChoiceInput_DefaultValueResponse_KsCK9C_text()
 - Error handling in progress
 - Test text for errors 
-# ChoiceInput_InvalidPrompt_hb0cMc()
+# ChoiceInput_DefaultValueResponse_KsCK9C()
 [Activity
-    Text = ${ChoiceInput_InvalidPrompt_hb0cMc_text()}
+    Text = ${ChoiceInput_DefaultValueResponse_KsCK9C_text()}
 ]
 
-# ChoiceInput_InvalidPrompt_hb0cMc_text()
-- Test text for GIS blocker rorr invalid prompt
-# SendActivity_1dokNi()
+# SendActivity_bseUqk_text()
+- ```Ok, let's see. Every year, we review your income tax filing to see what your Guaranteed Income Supplement should be. We don't have a tax filing for you from 2020\-2021. That's why your payments have been suspended.
+```
+# SendActivity_bseUqk()
 [Activity
-    Text = ${SendActivity_1dokNi_text()}
+    Text = ${SendActivity_bseUqk_text()}
 ]
 
-# SendActivity_1dokNi_text()
-- chaos testing loop is done this is before previosu code kicks back in dialogy wise
-# SendActivity_sHBaz6_text()
-- <Take user to callback flow>
-# SendActivity_sHBaz6()
+# ChoiceInput_Prompt_Q8yLjp_text()
+- ```If you like, I can create a statement of income for you. That would allow us to give you your payments faster, without you needing to file your taxes first.
+
+Would you like me to create a statement of income?```
+# ChoiceInput_Prompt_Q8yLjp()
 [Activity
-    Text = ${SendActivity_sHBaz6_text()}
+    Text = ${ChoiceInput_Prompt_Q8yLjp_text()}
 ]
+
+
+# ChoiceInput_Prompt_VUiSqC_text()
+- Would you like to receive a copy of your 2020 statement of income by email?
+# ChoiceInput_Prompt_VUiSqC()
+[Activity
+    Text = ${ChoiceInput_Prompt_VUiSqC_text()}
+]
+
+# SendActivity_zOvnkT()
+[Activity
+    Text = ${SendActivity_zOvnkT_text()}
+]
+
+# SendActivity_zOvnkT_text()
+- ```A statement of income can take up to 14 days for processing. If you are eligible, you can expect your payments to start again in about 2 weeks, including the ones you may have missed.
+
+Because you have declared $0, you can expect to receive the maximum GIS payment, $935.72.```
+# SendActivity_XrRzjY()
+[Activity
+    Text = ${SendActivity_XrRzjY_text()}
+]
+
+# SendActivity_XrRzjY_text()
+- If you are facing an emergency such as eviction or not having enough money for food or transport, please call [XXX-XXX-XXXX] for urgent support.
+# ChoiceInput_Prompt_hb8N5J_text()
+- The email address I have for you is [EMAIL]. Is this the correct email address?
+# ChoiceInput_Prompt_hb8N5J()
+[Activity
+    Text = ${ChoiceInput_Prompt_hb8N5J_text()}
+]
+
+# SendActivity_NEsU8a()
+[Activity
+    Text = ${SendActivity_NEsU8a_text()}
+]
+
+# SendActivity_NEsU8a_text()
+- Ok, I'll email your statement to [EMAIL].
+# SendActivity_SrFvlw()
+[Activity
+    Text = ${SendActivity_SrFvlw_text()}
+]
+
+# SendActivity_SrFvlw_text()
+- <Show user "Ray" Sub flow - receive by email statement of income>

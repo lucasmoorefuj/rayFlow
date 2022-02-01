@@ -19,15 +19,14 @@
         {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "hb0cMc"
+            "id": "KsCK9C"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 1,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${ChoiceInput_Prompt_hb0cMc()}",
-          "unrecognizedPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_KsCK9C()}",
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
@@ -45,8 +44,8 @@
             "recognizeOrdinals": true,
             "recognizeNumbers": true
           },
-          "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_hb0cMc()}",
-          "invalidPrompt": "${ChoiceInput_InvalidPrompt_hb0cMc()}"
+          "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_KsCK9C()}",
+          "invalidPrompt": "${ChoiceInput_InvalidPrompt_KsCK9C()}"
         },
         {
           "$kind": "Microsoft.IfCondition",
@@ -66,21 +65,21 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "tMNqxQ"
+                "id": "bseUqk"
               },
-              "activity": "${SendActivity_tMNqxQ()}"
+              "activity": "${SendActivity_bseUqk()}"
             },
             {
               "$kind": "Microsoft.ChoiceInput",
               "$designer": {
-                "id": "0hGtRS"
+                "id": "Q8yLjp"
               },
               "defaultLocale": "en-us",
               "disabled": false,
               "maxTurnCount": 3,
               "alwaysPrompt": false,
               "allowInterruptions": false,
-              "prompt": "${ChoiceInput_Prompt_0hGtRS()}",
+              "prompt": "${ChoiceInput_Prompt_Q8yLjp()}",
               "unrecognizedPrompt": "",
               "invalidPrompt": "",
               "defaultValueResponse": "",
@@ -104,15 +103,7 @@
                 "id": "8YoEEn"
               },
               "condition": "=dialog.GISCreateIncomeStatementChoice==\"Yes\"",
-              "elseActions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "sHBaz6"
-                  },
-                  "activity": "${SendActivity_sHBaz6()}"
-                }
-              ],
+              "elseActions": [],
               "actions": [
                 {
                   "$kind": "Microsoft.SetProperty",
@@ -129,6 +120,7 @@
                   },
                   "property": "user.blockerFlows",
                   "value": [
+                    "GIS-previousYearIncomeStatement",
                     "GIS-maritalStatus",
                     "GIS-outsideCA",
                     "GIS-accurateInfoPrompt"
@@ -157,7 +149,20 @@
                           "condition": "=dialog.foreach.value",
                           "cases": [
                             {
-                              "value": "${user.blockerFlows[0]}",
+                              "value": "GIS-previousYearIncomeStatement",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "kTJTb1"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "GIS-previousYearIncomeStatement"
+                                }
+                              ]
+                            },
+                            {
+                              "value": "GIS-maritalStatus",
                               "actions": [
                                 {
                                   "$kind": "Microsoft.BeginDialog",
@@ -170,7 +175,7 @@
                               ]
                             },
                             {
-                              "value": "${user.blockerFlows[1]}",
+                              "value": "GIS-outsideCA",
                               "actions": [
                                 {
                                   "$kind": "Microsoft.BeginDialog",
@@ -183,10 +188,203 @@
                               ]
                             },
                             {
-                              "value": "${user.blockerFlows[2]}",
-                              "actions": []
+                              "value": "GIS-accurateInfoPrompt",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.ChoiceInput",
+                                  "$designer": {
+                                    "id": "hPpLlR"
+                                  },
+                                  "defaultLocale": "en-us",
+                                  "disabled": false,
+                                  "maxTurnCount": 3,
+                                  "alwaysPrompt": false,
+                                  "allowInterruptions": false,
+                                  "unrecognizedPrompt": "",
+                                  "invalidPrompt": "",
+                                  "defaultValueResponse": "",
+                                  "prompt": "${ChoiceInput_Prompt_hPpLlR()}",
+                                  "choiceOptions": {
+                                    "includeNumbers": true,
+                                    "inlineOrMore": ", or ",
+                                    "inlineOr": " or "
+                                  },
+                                  "choices": [
+                                    "Yes",
+                                    "No"
+                                  ],
+                                  "property": "dialog.accurateInfoPromptChoice",
+                                  "style": "heroCard"
+                                },
+                                {
+                                  "$kind": "Microsoft.IfCondition",
+                                  "$designer": {
+                                    "id": "xQI2HJ"
+                                  },
+                                  "condition": "=dialog.accurateInfoPromptChoice==\"Yes\"",
+                                  "elseActions": [
+                                    {
+                                      "$kind": "Microsoft.ChoiceInput",
+                                      "$designer": {
+                                        "id": "DeQH6L"
+                                      },
+                                      "defaultLocale": "en-us",
+                                      "disabled": false,
+                                      "maxTurnCount": 3,
+                                      "alwaysPrompt": false,
+                                      "allowInterruptions": false,
+                                      "unrecognizedPrompt": "",
+                                      "invalidPrompt": "",
+                                      "defaultValueResponse": "",
+                                      "prompt": "${ChoiceInput_Prompt_DeQH6L()}",
+                                      "choiceOptions": {
+                                        "includeNumbers": true,
+                                        "inlineOrMore": ", or ",
+                                        "inlineOr": " or ",
+                                        "inlineSeparator": ", "
+                                      },
+                                      "choices": [
+                                        "Yes",
+                                        "No"
+                                      ],
+                                      "property": "dialog.GISBlockerRepeatChoice",
+                                      "style": "heroCard"
+                                    },
+                                    {
+                                      "$kind": "Microsoft.IfCondition",
+                                      "$designer": {
+                                        "id": "mv2aDq"
+                                      },
+                                      "condition": "=dialog.GISBlockerRepeatChoice==\"Yes\"",
+                                      "actions": [
+                                        {
+                                          "$kind": "Microsoft.RepeatDialog",
+                                          "$designer": {
+                                            "id": "kIU57h"
+                                          },
+                                          "activityProcessed": true,
+                                          "allowLoop": true,
+                                          "options": {}
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "$kind": "Microsoft.SendActivity",
+                                      "$designer": {
+                                        "id": "f7VHE0"
+                                      },
+                                      "activity": "${SendActivity_f7VHE0()}"
+                                    },
+                                    {
+                                      "$kind": "Microsoft.ChoiceInput",
+                                      "$designer": {
+                                        "id": "VUiSqC"
+                                      },
+                                      "defaultLocale": "en-us",
+                                      "disabled": false,
+                                      "maxTurnCount": 3,
+                                      "alwaysPrompt": false,
+                                      "allowInterruptions": false,
+                                      "unrecognizedPrompt": "",
+                                      "invalidPrompt": "",
+                                      "defaultValueResponse": "",
+                                      "prompt": "${ChoiceInput_Prompt_VUiSqC()}",
+                                      "choiceOptions": {
+                                        "includeNumbers": true,
+                                        "inlineOrMore": ", or ",
+                                        "inlineOr": " or ",
+                                        "inlineSeparator": ", "
+                                      },
+                                      "choices": [
+                                        "Yes",
+                                        "No"
+                                      ],
+                                      "property": "dialog.requestEmailCopyIncomeStatementChoice",
+                                      "style": "heroCard"
+                                    },
+                                    {
+                                      "$kind": "Microsoft.IfCondition",
+                                      "$designer": {
+                                        "id": "PKAjlE"
+                                      },
+                                      "condition": "=dialog.requestEmailCopyIncomeStatementChoice==\"Yes\"",
+                                      "actions": [
+                                        {
+                                          "$kind": "Microsoft.ChoiceInput",
+                                          "$designer": {
+                                            "id": "hb8N5J"
+                                          },
+                                          "defaultLocale": "en-us",
+                                          "disabled": false,
+                                          "maxTurnCount": 3,
+                                          "alwaysPrompt": false,
+                                          "allowInterruptions": false,
+                                          "unrecognizedPrompt": "",
+                                          "invalidPrompt": "",
+                                          "defaultValueResponse": "",
+                                          "prompt": "${ChoiceInput_Prompt_hb8N5J()}",
+                                          "choiceOptions": {
+                                            "includeNumbers": true,
+                                            "inlineOrMore": ", or ",
+                                            "inlineOr": " or ",
+                                            "inlineSeparator": ", "
+                                          },
+                                          "choices": [
+                                            "Yes",
+                                            "No"
+                                          ],
+                                          "property": "dialog.isYourEmailChoice",
+                                          "style": "heroCard"
+                                        },
+                                        {
+                                          "$kind": "Microsoft.IfCondition",
+                                          "$designer": {
+                                            "id": "SrA6dy"
+                                          },
+                                          "condition": "=dialog.isYourEmailChoice==\"Yes\"",
+                                          "actions": [
+                                            {
+                                              "$kind": "Microsoft.SendActivity",
+                                              "$designer": {
+                                                "id": "NEsU8a"
+                                              },
+                                              "activity": "${SendActivity_NEsU8a()}"
+                                            }
+                                          ],
+                                          "elseActions": [
+                                            {
+                                              "$kind": "Microsoft.SendActivity",
+                                              "$designer": {
+                                                "id": "SrFvlw"
+                                              },
+                                              "activity": "${SendActivity_SrFvlw()}"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "$kind": "Microsoft.SendActivity",
+                                      "$designer": {
+                                        "id": "zOvnkT"
+                                      },
+                                      "activity": "${SendActivity_zOvnkT()}"
+                                    },
+                                    {
+                                      "$kind": "Microsoft.SendActivity",
+                                      "$designer": {
+                                        "id": "XrRzjY"
+                                      },
+                                      "activity": "${SendActivity_XrRzjY()}"
+                                    }
+                                  ]
+                                }
+                              ]
                             }
-                          ]
+                          ],
+                          "default": []
                         }
                       ],
                       "condition": "=user.GIS.createStatementIsValid",
@@ -204,13 +402,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "1dokNi"
-              },
-              "activity": "${SendActivity_1dokNi()}"
             }
           ]
         }

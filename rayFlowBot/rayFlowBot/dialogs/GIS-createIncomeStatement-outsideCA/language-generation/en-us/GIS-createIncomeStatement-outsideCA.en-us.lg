@@ -1,16 +1,18 @@
 [import](common.lg)
 
 # ChoiceInput_Prompt_COcmjQ_text()
-- Did you live outside of Canada in for 6 consecutive months in the last 18 months?
+- In the last year and a half (18 months), did you live outside of Canada for more than 6 months?
 # ChoiceInput_Prompt_COcmjQ()
 [Activity
     Text = ${ChoiceInput_Prompt_COcmjQ_text()}
 ]
 
 # ChoiceInput_Prompt_nnkiVa_text()
-- ```Living abroad for 6 consecutive months disqualifies you from receiving GIS. It could also be  why your payments were put on hold.
+- ```You cannot collect the Guaranteed Income Supplement if you are outside of Canada for more than 6 months. Doing so may put you in overpayment, and you may have to repay that amount.
 
-If you believe this to be a mistake, I can have someone call you.```
+If you've recently returned to Canada, we might be able to resume your payments. You can get started by speaking with a Service Canada representative.
+
+Would you like me to set up a call for you?```
 # ChoiceInput_Prompt_nnkiVa()
 [Activity
     Text = ${ChoiceInput_Prompt_nnkiVa_text()}

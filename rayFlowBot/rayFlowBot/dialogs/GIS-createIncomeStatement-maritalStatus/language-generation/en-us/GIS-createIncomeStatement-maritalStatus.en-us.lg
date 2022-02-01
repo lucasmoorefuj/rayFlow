@@ -15,10 +15,11 @@
 ]
 
 # ChoiceInput_Prompt_3JRbEn_text()
-- ```Your marital status may change may impact your GIS payments It may also impact the information we need to receive from you in order to qualify. It could  be why your payments were put on hold.
+- ```Life events such as a marriage, a new common\-law partnership or even a separation can impact the amount you receive from the Guaranteed Income Supplement.
 
-If you believe this to be a mistake, I can have someone call you.
-```
+While I can help you resolve a lot of common issues, I believe you would be better served by a Service Canada representative.
+
+Would you like me to set up a call for you?```
 # ChoiceInput_Prompt_3JRbEn()
 [Activity
     Text = ${ChoiceInput_Prompt_3JRbEn_text()}

@@ -1,0 +1,40 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Zj7dGa",
+    "name": "GIS-previousYearIncomeStatement",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FyGeYY"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "C3D3ro"
+          },
+          "property": "dialog.titletest",
+          "value": "=\"ISP 3026 - demo title\""
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "mclu10"
+          },
+          "activity": "${SendActivity_mclu10()}"
+        }
+      ]
+    }
+  ],
+  "generator": "GIS-previousYearIncomeStatement.lg",
+  "recognizer": "GIS-previousYearIncomeStatement.lu.qna",
+  "id": "GIS-previousYearIncomeStatement"
+}
