@@ -31,25 +31,6 @@
                             "horizontalAlignment": "Center",
                             "weight": "Bolder"
                         }
-                    ],
-                    "separator": true,
-                    "horizontalAlignment": "Center",
-                    "backgroundImage": {
-                        "verticalAlignment": "Center"
-                    }
-                },
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Spouse or Common-Law Partner (if applicable)",
-                            "wrap": true,
-                            "horizontalAlignment": "Center",
-                            "separator": true,
-                            "weight": "Bolder"
-                        }
                     ]
                 }
             ]
@@ -69,11 +50,6 @@
                             "weight": "Bolder"
                         }
                     ]
-                },
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "separator": true
                 },
                 {
                     "type": "Column",
@@ -100,13 +76,10 @@
                                             "type": "TextBlock",
                                             "text": "Other pension Income (superannuation, RRIF's foreign pension, etc.)",
                                             "wrap": true,
-                                            "weight": "Bolder"
+                                            "weight": "Bolder",
+                                            "separator": true
                                         }
                                     ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "stretch"
                                 },
                                 {
                                     "type": "Column",
@@ -131,11 +104,8 @@
                             "wrap": true,
                             "weight": "Bolder"
                         }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "stretch"
+                    ],
+                    "separator": true
                 },
                 {
                     "type": "Column",
@@ -154,13 +124,10 @@
                             "type": "TextBlock",
                             "text": "Workers' compensation benefits",
                             "wrap": true,
-                            "weight": "Bolder"
+                            "weight": "Bolder",
+                            "separator": true
                         }
                     ]
-                },
-                {
-                    "type": "Column",
-                    "width": "stretch"
                 },
                 {
                     "type": "Column",
@@ -179,6 +146,94 @@
                             "type": "TextBlock",
                             "text": "Interest and other investment income",
                             "wrap": true,
+                            "weight": "Bolder",
+                            "separator": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Taxable Canadian Dividends and capital gains",
+                            "wrap": true,
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "From Canadian sources",
+                                            "wrap": true,
+                                            "weight": "Bolder"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "separator": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "From foreign sources",
+                                            "wrap": true,
+                                            "weight": "Bolder"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "separator": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Net rental income (if declaring a loss attach a rental income statement)",
+                            "wrap": true,
+                            "separator": true,
                             "weight": "Bolder"
                         }
                     ]
@@ -186,6 +241,90 @@
                 {
                     "type": "Column",
                     "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "wrap": true,
+                            "text": "Net employment income (after allowable deductions)",
+                            "weight": "Bolder",
+                            "separator": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Net self-employment income (if declaring a loss, attach a profit and loss statement)",
+                            "wrap": true,
+                            "separator": true,
+                            "weight": "Bolder"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Other income (specify source and amount)",
+                            "wrap": true,
+                            "separator": true,
+                            "weight": "Bolder"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Total (If you have no income, write \"0\")",
+                            "wrap": true,
+                            "separator": true,
+                            "weight": "Bolder"
+                        }
+                    ]
                 },
                 {
                     "type": "Column",
@@ -202,3 +341,4 @@
 [Activity
     Attachments = ${json(SendActivity_mclu10_attachment_U1SIOe())}
 ]
+
