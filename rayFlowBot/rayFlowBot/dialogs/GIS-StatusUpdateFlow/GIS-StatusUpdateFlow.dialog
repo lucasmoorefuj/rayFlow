@@ -26,6 +26,13 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
+            "id": "jndWtW"
+          },
+          "activity": "${SendActivity_jndWtW()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
             "id": "bfU7zs"
           },
           "activity": "${SendActivity_bfU7zs()}"
@@ -49,7 +56,7 @@
             "inlineOr": " or ",
             "inlineSeparator": ", "
           },
-          "property": "dialog.hasLifeChangesChoice",
+          "property": "dialog.notifiedviaSMSEmailChoice",
           "prompt": "${ChoiceInput_Prompt_RnqwAC()}",
           "outputFormat": "value",
           "choices": [
@@ -61,25 +68,26 @@
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "PsTb8Z"
+            "id": "jv75Yy"
           },
-          "condition": "=dialog.hasLifeChangesChoice == \"Yes\"",
+          "condition": "=dialog.notifiedviaSMSEmailChoice==\"Yes\"",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "pVaVP8"
+              },
+              "activityProcessed": true,
+              "dialog": "moreHelpDialogFlow"
+            }
+          ],
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "t99cSl"
+                "id": "M0YHS5"
               },
-              "activity": "${SendActivity_t99cSl()}"
-            }
-          ],
-          "elseActions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "OuZr2M"
-              },
-              "activity": "${SendActivity_OuZr2M()}"
+              "activity": "${SendActivity_M0YHS5()}"
             }
           ]
         }
