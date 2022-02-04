@@ -46,15 +46,21 @@
                             "type": "TextBlock",
                             "text": "Canada Pension Plan or Quebec Pension Plan benefits (Do not include Death or Child benefit)",
                             "wrap": true,
-                            "separator": true,
-                            "weight": "Bolder"
+                            "weight": "Bolder",
+                            "separator": true
                         }
                     ]
                 },
                 {
                     "type": "Column",
                     "width": "stretch",
-                    "separator": true
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "wrap": true,
+                            "text": "${user.gisData.fields["Canadian or Quebec Pension Plan"]}"
+                        }
+                    ]
                 }
             ]
         },
@@ -78,12 +84,62 @@
                                             "wrap": true,
                                             "weight": "Bolder",
                                             "separator": true
+                                        },
+                                        {
+                                            "type": "ColumnSet",
+                                            "columns": [
+                                                {
+                                                    "type": "Column",
+                                                    "width": "stretch",
+                                                    "items": [
+                                                        {
+                                                            "type": "TextBlock",
+                                                            "text": "From Canadian sources:",
+                                                            "wrap": true
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Column",
+                                                    "width": "stretch",
+                                                    "items": [
+                                                        {
+                                                            "type": "TextBlock",
+                                                            "text": "${user.gisData.fields["Other pension income: Canadian"]}",
+                                                            "wrap": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "ColumnSet",
+                                            "columns": [
+                                                {
+                                                    "type": "Column",
+                                                    "width": "stretch",
+                                                    "items": [
+                                                        {
+                                                            "type": "TextBlock",
+                                                            "text": "From Foreign sources:",
+                                                            "wrap": true
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Column",
+                                                    "width": "stretch",
+                                                    "items": [
+                                                        {
+                                                            "type": "TextBlock",
+                                                            "text": "${user.gisData.fields["Other pension income: Foreign"]}",
+                                                            "wrap": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "stretch"
                                 }
                             ]
                         }
@@ -109,7 +165,14 @@
                 },
                 {
                     "type": "Column",
-                    "width": "stretch"
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.gisData.fields["Employment Insurance"]}",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         },
@@ -131,7 +194,14 @@
                 },
                 {
                     "type": "Column",
-                    "width": "stretch"
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.gisData.fields["Workers compensation benefits"]}",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         },
@@ -153,7 +223,14 @@
                 },
                 {
                     "type": "Column",
-                    "width": "stretch"
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.gisData.fields["Interest and other Investment Income"]}",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         },
@@ -179,24 +256,37 @@
                                     "items": [
                                         {
                                             "type": "TextBlock",
-                                            "text": "From Canadian sources",
+                                            "text": "Eligible and other than Eligible Dividends",
                                             "wrap": true,
-                                            "weight": "Bolder"
+                                            "weight": "Default"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Capital Gains",
+                                            "wrap": true,
+                                            "weight": "Default"
                                         }
                                     ]
                                 },
                                 {
                                     "type": "Column",
                                     "width": "stretch",
-                                    "separator": true
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${user.gisData.fields["Taxable dividends"]}",
+                                            "wrap": true
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${user.gisData.fields["Taxable capital gains"]}",
+                                            "wrap": true
+                                        }
+                                    ]
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "Column",
-                    "width": "stretch"
                 }
             ]
         },
@@ -216,8 +306,9 @@
                                     "items": [
                                         {
                                             "type": "TextBlock",
-                                            "text": "From foreign sources",
+                                            "text": "Net rental income (if declaring a loss attach a rental income statement)",
                                             "wrap": true,
+                                            "separator": true,
                                             "weight": "Bolder"
                                         }
                                     ]
@@ -225,22 +316,17 @@
                                 {
                                     "type": "Column",
                                     "width": "stretch",
-                                    "separator": true
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${user.gisData.fields["Net rental income"]}",
+                                            "wrap": true
+                                        }
+                                    ]
                                 }
                             ]
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Net rental income (if declaring a loss attach a rental income statement)",
-                            "wrap": true,
-                            "separator": true,
-                            "weight": "Bolder"
                         }
                     ]
-                },
-                {
-                    "type": "Column",
-                    "width": "stretch"
                 }
             ]
         },
@@ -262,7 +348,14 @@
                 },
                 {
                     "type": "Column",
-                    "width": "stretch"
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.gisData.fields["Net employment income"]}",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         },
@@ -284,7 +377,14 @@
                 },
                 {
                     "type": "Column",
-                    "width": "stretch"
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.gisData.fields["Net self-employment income"]}",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         },
@@ -306,7 +406,14 @@
                 },
                 {
                     "type": "Column",
-                    "width": "stretch"
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.gisData.fields["Other income"]}",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         },
@@ -328,7 +435,14 @@
                 },
                 {
                     "type": "Column",
-                    "width": "stretch"
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "$0.00",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         }
@@ -342,3 +456,9 @@
     Attachments = ${json(SendActivity_mclu10_attachment_U1SIOe())}
 ]
 
+# SendActivity_FebC2j_text()
+- Was not able to retrieve the user data at this time.
+# SendActivity_FebC2j()
+[Activity
+    Text = ${SendActivity_FebC2j_text()}
+]

@@ -17,6 +17,22 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "AOxl3g"
+          },
+          "activityProcessed": true,
+          "dialog": "getGISData"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "e1XMjI"
+          },
+          "value": "={\"Canadian Quebec Pension Plan\": 5000, \"Other Pension Income: Canadian\": 0, \"Other Pension Income: Foreign\": 0, \"Employment Insurance\": 500, \"Workers compensation benefits\": 0, \"Interest and other Investment Income\": 0, \"Taxable dividends\": 0, \"Taxable Capital gains\": 0, \"Net rental income\": 0, \"Net employment income\": 0, \"Net self-employment income\": 0, \"Other income\": 0}",
+          "property": "user.GISPreviousIncomeStatement"
+        },
+        {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "C3D3ro"

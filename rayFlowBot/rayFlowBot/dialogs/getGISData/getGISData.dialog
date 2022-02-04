@@ -1,0 +1,65 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "PkilqK",
+    "name": "getGISData",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "6a1YPh"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "c2ftuU"
+          },
+          "resultProperty": "dialog.api_response",
+          "method": "GET",
+          "url": "https://api.airtable.com/v0/app252U6sk1tYRd2b/GIS/recIXKSgy7kAzljh1",
+          "headers": {
+            "Authorization": "Bearer keyhJKsmh66ZaFbnG"
+          },
+          "contentType": "application/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "AJRff7"
+          },
+          "condition": "=dialog.api_response.statusCode==200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "Iza5Yv"
+              },
+              "property": "user.gisData",
+              "value": "=dialog.api_response.content"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "RZBZb1"
+              },
+              "activity": "${SendActivity_RZBZb1()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "getGISData.lg",
+  "recognizer": "getGISData.lu.qna",
+  "id": "getGISData"
+}

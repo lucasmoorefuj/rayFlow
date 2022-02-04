@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_RZBZb1_text()
+- Was not able to retrieve the user data at this time.
+# SendActivity_RZBZb1()
+[Activity
+    Text = ${SendActivity_RZBZb1_text()}
+]
+
+# SendActivity_6s4TLh_text()
+- Was not able to retrieve the user data at this time.
+# SendActivity_6s4TLh()
+[Activity
+    Text = ${SendActivity_6s4TLh_text()}
+]
