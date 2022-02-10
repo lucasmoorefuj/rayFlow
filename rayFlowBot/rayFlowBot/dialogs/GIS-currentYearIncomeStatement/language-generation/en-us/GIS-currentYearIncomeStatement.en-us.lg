@@ -1,0 +1,173 @@
+[import](common.lg)
+
+# SendActivity_n0J8Ep_text()
+- ```gisInputCorQPension: ${turn.activity.value.gisInputCorQPension},
+gisInputEI ${turn.activity.value.gisInputEI},
+gisInputWorkersComp: ${turn.activity.value.gisInputWorkersComp}```
+# SendActivity_n0J8Ep()
+[Activity
+    Text = ${SendActivity_n0J8Ep_text()}
+]
+
+# Ask_Activity_HwPjZ2()
+[Activity
+    Attachments = ${json(Ask_Activity_HwPjZ2_attachment_HoxfAE())}
+]
+
+# Ask_Activity_HwPjZ2_attachment_HoxfAE()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "${dialog.titletest}"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Your Income",
+                            "wrap": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Canada Pension Plan or Quebec Pension Plan benefits (Do not include Death or Child benefit)",
+                            "wrap": true,
+                            "weight": "Bolder",
+                            "separator": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Number",
+                            "id": "gisInputCorQPension",
+                            "placeholder": "gisInputCorQPension"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Employment Insurance",
+                            "wrap": true,
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "separator": true
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Number",
+                            "id": "gisInputEI",
+                            "placeholder": "gisInputEI"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Workers' compensation benefits",
+                            "wrap": true,
+                            "weight": "Bolder",
+                            "separator": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Number",
+                            "placeholder": "gisInputWorkersComp",
+                            "id": "gisInputWorkersComp"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2"
+}
+```
+# Ask_Activity_MmJMwk()
+[Activity
+    Attachments = ${json(Ask_Activity_MmJMwk_attachment_B0LwwI())}
+]
+
+# Ask_Activity_MmJMwk_attachment_B0LwwI()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "default text",
+      "weight": "bolder",
+      "isSubtle": false
+    }
+  ]
+}```

@@ -191,6 +191,14 @@
                               "value": "GIS-accurateInfoPrompt",
                               "actions": [
                                 {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "3ttW62"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "GIS-currentYearIncomeStatement"
+                                },
+                                {
                                   "$kind": "Microsoft.ChoiceInput",
                                   "$designer": {
                                     "id": "hPpLlR"

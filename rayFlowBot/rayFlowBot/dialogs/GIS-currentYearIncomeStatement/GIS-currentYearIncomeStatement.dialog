@@ -1,0 +1,50 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "dKVGWs",
+    "name": "GIS-currentYearIncomeStatement",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "270Ydw"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Ask",
+          "$designer": {
+            "id": "HwPjZ2"
+          },
+          "activity": "${Ask_Activity_HwPjZ2()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "EfTcEz",
+        "name": "Message received (Message received activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "n0J8Ep"
+          },
+          "activity": "${SendActivity_n0J8Ep()}"
+        }
+      ],
+      "condition": "=turn.activity.value",
+      "runOnce": true
+    }
+  ],
+  "generator": "GIS-currentYearIncomeStatement.lg",
+  "recognizer": "GIS-currentYearIncomeStatement.lu.qna",
+  "id": "GIS-currentYearIncomeStatement"
+}
