@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "Zj7dGa",
-    "name": "GIS-previousYearIncomeStatement",
+    "id": "XLAJRc",
+    "name": "GIS-currentYearIncomeStatementReview",
     "comment": ""
   },
   "autoEndDialog": true,
@@ -13,13 +13,13 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "FyGeYY"
+        "id": "YuZMEM"
       },
       "actions": [
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "AOxl3g"
+            "id": "6NInUY"
           },
           "activityProcessed": true,
           "dialog": "getGISData"
@@ -27,22 +27,22 @@
         {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
-            "id": "C3D3ro"
+            "id": "CvZpZQ"
           },
           "property": "dialog.titletest",
-          "value": "=\"Previous year ISP 3026 \""
+          "value": "=\"2020 Year ISP 3026 \""
         },
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "mclu10"
+            "id": "J6htqc"
           },
-          "activity": "${SendActivity_mclu10()}"
+          "activity": "${SendActivity_J6htqc()}"
         }
       ]
     }
   ],
-  "generator": "GIS-previousYearIncomeStatement.lg",
-  "recognizer": "GIS-previousYearIncomeStatement.lu.qna",
-  "id": "GIS-previousYearIncomeStatement"
+  "generator": "GIS-currentYearIncomeStatementReview.lg",
+  "recognizer": "GIS-currentYearIncomeStatementReview.lu.qna",
+  "id": "GIS-currentYearIncomeStatementReview"
 }

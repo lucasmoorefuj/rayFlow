@@ -7,3 +7,10 @@
 
 # TextInput_Prompt_UKCgwj_text()
 - What's your new email address?
+# TextInput_InvalidPrompt_UKCgwj()
+[Activity
+    Text = ${TextInput_InvalidPrompt_UKCgwj_text()}
+]
+
+# TextInput_InvalidPrompt_UKCgwj_text()
+- ${this.value} is not a valid email, please try again.

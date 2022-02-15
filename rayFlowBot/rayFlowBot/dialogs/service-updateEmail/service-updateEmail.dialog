@@ -33,15 +33,17 @@
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "unrecognizedPrompt": "",
           "property": "user.userEmail",
           "prompt": "${TextInput_Prompt_UKCgwj()}",
-          "validations": []
+          "validations": [
+            "isMatch(this.value, '^(([^<>()[\\]\\\\.,;:\\s@\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$')"
+          ],
+          "invalidPrompt": "${TextInput_InvalidPrompt_UKCgwj()}"
         },
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "s924aj"
+            "id": "aiv8NS"
           },
           "resultProperty": "turn.results",
           "body": {

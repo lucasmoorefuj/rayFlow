@@ -1,0 +1,175 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "UplIOo",
+    "name": "GIS-sectionE",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "4sLj4o"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "mRYyQq"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 1,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_mRYyQq()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value",
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "property": "dialog.GISIncomeChangeChoice",
+          "style": "heroCard",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_mRYyQq()}",
+          "invalidPrompt": "${ChoiceInput_InvalidPrompt_mRYyQq()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "aFitF6"
+          },
+          "condition": "=dialog.GISIncomeChangeChoice==\"Yes\"",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "D22QVS"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "oV9zx0"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 1,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_oV9zx0()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "outputFormat": "value",
+              "choices": [
+                "Yes",
+                "No"
+              ],
+              "property": "dialog.GISDidWorkChoice",
+              "style": "heroCard",
+              "recognizerOptions": {
+                "recognizeOrdinals": true,
+                "recognizeNumbers": true
+              },
+              "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_oV9zx0()}",
+              "invalidPrompt": "${ChoiceInput_InvalidPrompt_oV9zx0()}"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "rZ3BR6"
+              },
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "xE0FcH"
+                  },
+                  "activity": "${SendActivity_xE0FcH()}"
+                },
+                {
+                  "$kind": "Microsoft.Ask",
+                  "$designer": {
+                    "id": "8CQK0v"
+                  },
+                  "activity": "${Ask_Activity_8CQK0v()}"
+                }
+              ],
+              "condition": "=dialog.GISDidWorkChoice==\"Yes\""
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "2sdsbD"
+          },
+          "activity": "${SendActivity_2sdsbD()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "gSQ2T6",
+        "name": "Message received (Message received activity)"
+      },
+      "condition": "=turn.activity.value",
+      "actions": [
+        {
+          "$kind": "Microsoft.LogAction",
+          "$designer": {
+            "id": "RlNgso"
+          },
+          "text": "${LogAction_Text_RlNgso()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "Egu8iF"
+          },
+          "property": "user.gis.new.employeeIncomeAmount",
+          "value": "=turn.activity.value.employeeIncomeAmount"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "BEoO8p"
+          },
+          "assignments": [
+            {
+              "property": "user.gis.new.employeeIncomeAmount",
+              "value": "=turn.activity.value.employeeIncomeAmount"
+            },
+            {
+              "property": "user.gis.new.selfemploymentAmount",
+              "value": "=turn.activity.value.selfemploymentAmount"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GIS-sectionE.lg",
+  "recognizer": "GIS-sectionE.lu.qna",
+  "id": "GIS-sectionE"
+}

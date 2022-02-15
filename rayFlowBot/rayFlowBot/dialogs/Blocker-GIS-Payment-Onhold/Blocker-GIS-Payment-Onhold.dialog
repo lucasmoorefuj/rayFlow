@@ -120,9 +120,10 @@
                   },
                   "property": "user.blockerFlows",
                   "value": [
-                    "GIS-previousYearIncomeStatement",
                     "GIS-maritalStatus",
                     "GIS-outsideCA",
+                    "GIS-previousYearIncomeStatement",
+                    "GIS-sectionE",
                     "GIS-accurateInfoPrompt"
                   ]
                 },
@@ -188,15 +189,28 @@
                               ]
                             },
                             {
+                              "value": "GIS-sectionE",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "F9Auhc"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "GIS-sectionE"
+                                }
+                              ]
+                            },
+                            {
                               "value": "GIS-accurateInfoPrompt",
                               "actions": [
                                 {
                                   "$kind": "Microsoft.BeginDialog",
                                   "$designer": {
-                                    "id": "3ttW62"
+                                    "id": "WoR0JA"
                                   },
                                   "activityProcessed": true,
-                                  "dialog": "GIS-currentYearIncomeStatement"
+                                  "dialog": "GIS-currentYearIncomeStatementReview"
                                 },
                                 {
                                   "$kind": "Microsoft.ChoiceInput",

@@ -1,0 +1,152 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_mRYyQq_text()
+- Did your income (excluding Old Age Security and Guaranteed Income Supplement) change in 2020?
+# ChoiceInput_Prompt_mRYyQq()
+[Activity
+    Text = ${ChoiceInput_Prompt_mRYyQq_text()}
+]
+
+# ChoiceInput_InvalidPrompt_mRYyQq_text()
+- Test text for GIS blocker rorr invalid prompt
+# ChoiceInput_InvalidPrompt_mRYyQq()
+[Activity
+    Text = ${ChoiceInput_InvalidPrompt_mRYyQq_text()}
+]
+
+# ChoiceInput_DefaultValueResponse_mRYyQq_text()
+- Error handling in progress
+- Test text for errors 
+# ChoiceInput_DefaultValueResponse_mRYyQq()
+[Activity
+    Text = ${ChoiceInput_DefaultValueResponse_mRYyQq_text()}
+]
+
+# ChoiceInput_Prompt_oV9zx0_text()
+- Ok, I will ask you a few questions to determine what has changed. First, did you work in 2020?
+# ChoiceInput_Prompt_oV9zx0()
+[Activity
+    Text = ${ChoiceInput_Prompt_oV9zx0_text()}
+]
+
+# ChoiceInput_InvalidPrompt_oV9zx0_text()
+- Test text for GIS blocker rorr invalid prompt
+# ChoiceInput_InvalidPrompt_oV9zx0()
+[Activity
+    Text = ${ChoiceInput_InvalidPrompt_oV9zx0_text()}
+]
+
+# ChoiceInput_DefaultValueResponse_oV9zx0_text()
+- Error handling in progress
+- Test text for errors 
+# ChoiceInput_DefaultValueResponse_oV9zx0()
+[Activity
+    Text = ${ChoiceInput_DefaultValueResponse_oV9zx0_text()}
+]
+
+# SendActivity_xE0FcH()
+[Activity
+    Text = ${SendActivity_xE0FcH_text()}
+]
+
+# SendActivity_xE0FcH_text()
+- Please give me some details about your employment income.
+# Ask_Activity_8CQK0v()
+[Activity
+    Attachments = ${json(Ask_Activity_8CQK0v_attachment_ip6Hrh())}
+]
+
+# Ask_Activity_8CQK0v_attachment_ip6Hrh()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "In 2020, how much income did you make:",
+            "wrap": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "- as an employee:",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "$0",
+                            "id": "employeeIncomeAmount"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "- through self-employment:",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "$0",
+                            "id": "selfemploymentAmount"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit"
+                }
+            ]
+        }
+    ]
+}
+```
+# SendActivity_2sdsbD()
+[Activity
+    Text = ${SendActivity_2sdsbD_text()}
+]
+
+# SendActivity_2sdsbD_text()
+- end of section E
+# LogAction_Text_RlNgso()
+[Activity
+    Text = ${LogAction_Text_RlNgso_text()}
+]
+
+# LogAction_Text_RlNgso_text()
+- Make database call to save the data.
