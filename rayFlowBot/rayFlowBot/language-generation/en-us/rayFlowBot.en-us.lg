@@ -6,7 +6,7 @@
 ]
 
 # SendActivity_Greeting_text()
-- Hi, I am your Virtual Assistant
+- Hi Ray, I'm your virtual assistant.
 # SendActivity_DidNotUnderstand()
 [Activity
     Text = ${SendActivity_DidNotUnderstand_text()}

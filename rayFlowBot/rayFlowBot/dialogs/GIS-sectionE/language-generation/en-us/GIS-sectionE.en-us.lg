@@ -79,7 +79,7 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "- as an employee:",
+                            "text": "- as an employee: ",
                             "wrap": true
                         }
                     ]
@@ -129,20 +129,19 @@
             "actions": [
                 {
                     "type": "Action.Submit",
-                    "title": "Submit"
+                    "title": "Submit",
+                    "id": "incomeMadeCard"
                 }
             ]
+        },
+        {
+            "type": "Input.Text",
+            "isVisible": false,
+            "id": "investmentsCardId"
         }
     ]
 }
 ```
-# SendActivity_2sdsbD()
-[Activity
-    Text = ${SendActivity_2sdsbD_text()}
-]
-
-# SendActivity_2sdsbD_text()
-- end of section E
 # LogAction_Text_RlNgso()
 [Activity
     Text = ${LogAction_Text_RlNgso_text()}
@@ -150,3 +149,254 @@
 
 # LogAction_Text_RlNgso_text()
 - Make database call to save the data.
+# SendActivity_A79RBx()
+[Activity
+    Text = ${SendActivity_A79RBx_text()}
+]
+
+# SendActivity_A79RBx_text()
+- Great! I have added this information to your statement.
+# ChoiceInput_Prompt_susoQp_text()
+- Now, did you earn income from your investments in 2020?
+# ChoiceInput_Prompt_susoQp()
+[Activity
+    Text = ${ChoiceInput_Prompt_susoQp_text()}
+]
+
+# ChoiceInput_InvalidPrompt_susoQp_text()
+- Test text for GIS blocker rorr invalid prompt
+# ChoiceInput_InvalidPrompt_susoQp()
+[Activity
+    Text = ${ChoiceInput_InvalidPrompt_susoQp_text()}
+]
+
+# ChoiceInput_DefaultValueResponse_susoQp_text()
+- Error handling in progress
+- Test text for errors 
+# ChoiceInput_DefaultValueResponse_susoQp()
+[Activity
+    Text = ${ChoiceInput_DefaultValueResponse_susoQp_text()}
+]
+
+# LogAction_Text_3qxXm9()
+[Activity
+    Text = ${LogAction_Text_3qxXm9_text()}
+]
+
+# LogAction_Text_3qxXm9_text()
+- End of section E
+# Ask_Activity_0VvdRo()
+[Activity
+    Attachments = ${json(Ask_Activity_0VvdRo_attachment_HHbHYL())}
+]
+
+# Ask_Activity_0VvdRo_attachment_HHbHYL()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```
+ {
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "In 2020, how much income did you make:",
+            "wrap": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "- as an employee: ",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "$0",
+                            "id": "employeeIncomeAmount"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "- through self-employment:",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "$0",
+                            "id": "selfemploymentAmount"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit",
+                    "id": "incomeMadeCard"
+                }
+            ]
+        }
+    ]
+} 
+ ```
+# SendActivity_ey19q1()
+[Activity
+    Text = ${SendActivity_ey19q1_text()}
+]
+
+# SendActivity_ey19q1_text()
+- Please give us some details about your investments.
+# Ask_Activity_rFQB10()
+[Activity
+    Attachments = ${json(Ask_Activity_rFQB10_attachment_98lKoS())}
+]
+
+# Ask_Activity_rFQB10_attachment_98lKoS()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Tell me about the performance of your investments:",
+            "wrap": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "- Interests made:",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "$0",
+                            "id": "interestsMade"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "- Capital gains made:",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "$0",
+                            "id": "capitalGainsMade"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "- Dividends made:",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Number",
+                            "placeholder": "$0",
+                            "id": "dividendsMade"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit",
+                    "id": "investmentsMadeCard"
+                }
+            ]
+        }
+    ]
+}
+
+
+```
+# SendActivity_BhMFzS()
+[Activity
+    Text = ${SendActivity_BhMFzS_text()}
+]
+
+# SendActivity_BhMFzS_text()
+- Ok, I have added this information to your statement.
